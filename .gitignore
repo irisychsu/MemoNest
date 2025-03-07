@@ -1,0 +1,8 @@
+# 忽略 Chrome 擴充功能的暫存檔案
+node_modules/
+.DS_Store
+*.log
+*.pem
+*.crt
+*.key
+.env
