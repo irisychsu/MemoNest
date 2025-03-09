@@ -4,12 +4,12 @@ document.addEventListener("mouseup", () => {
     let selectedText = window.getSelection().toString().trim();
     if (selectedText) {
         console.log("使用者選取的文字：", selectedText);
-
+        
         // 取得當前頁面的標題與網址
         let pageTitle = document.title;
         let pageUrl = window.location.href;
         let contextSentence = getContextSentence(selectedText);
-
+        
         // 向 background script 發送翻譯請求
         chrome.runtime.sendMessage({ action: "translate", word: selectedText }, (response) => {
             if (response && response.translation) {
@@ -31,13 +31,13 @@ function showTranslationPopup(word, translation, sentence, title, url) {
     popup.style.right = "10px";
     popup.style.zIndex = "1000";
     document.body.appendChild(popup);
-
+    
     document.getElementById("saveWord").addEventListener("click", () => {
         saveWordToStorage(word, translation, { sentence, title, url });
         popup.remove();
         alert("單字已儲存！");
     });
-
+    
     setTimeout(() => {
         popup.remove();
     }, 5000);
