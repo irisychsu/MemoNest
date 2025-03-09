@@ -3,7 +3,11 @@
   "name": "MemoNest",
   "version": "1.0",
   "description": "A Chrome extension for enhancing English vocabulary learning.",
-  "permissions": ["storage"],
+  "permissions": [
+    "storage",
+    "activeTab"
+]
+,
   "host_permissions": ["<all_urls>"],
   "background": {
     "service_worker": "background.js"
