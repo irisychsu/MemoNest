@@ -5,7 +5,8 @@
   "description": "A Chrome extension for enhancing English vocabulary learning.",
   "permissions": [
     "storage",
-    "activeTab"
+    "activeTab",
+    "tabs"
 ]
 ,
   "host_permissions": ["<all_urls>"],
