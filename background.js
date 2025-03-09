@@ -1,6 +1,9 @@
 // background.js
 
-console.log("🚀 Background script is running!");
+
+console.log("🚀 Background script has started!");
+console.log("📡 擴充功能 ID:", chrome.runtime.id);
+
 
 chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
     console.log("📩 收到訊息：", request);
