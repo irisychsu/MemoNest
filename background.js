@@ -9,7 +9,7 @@ chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
         fetchOxfordTranslation(request.word).then(translation => {
             sendResponse({ translation });
         });
-        return true;
+        return true; // 讓 Chrome 延遲回應，等待 API 結果
     }
 
     if (request.action === "getPageInfo") {
@@ -28,6 +28,6 @@ chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
                 url: activeTab.url
             });
         });
-        return true;
+        return true; // 讓 Chrome 等待 sendResponse 回應
     }
 });
